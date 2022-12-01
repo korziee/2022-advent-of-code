@@ -1,7 +1,7 @@
 import os
 import strconv
 
-input := os.read_file('input')?
+input := os.read_file('input') ?
 lines := input.split_into_lines()
 
 mut max_cal := 0
