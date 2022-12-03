@@ -1,3 +1,4 @@
 learnings.md
-**/tutorial/**
+tutorials/**
 **/*.beam
+**/node_modules

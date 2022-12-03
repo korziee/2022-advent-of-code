@@ -2,7 +2,8 @@
 
 - common lisp
 - haskell
-- v
 - go
+
 - ts
+- v
 - erlang????
