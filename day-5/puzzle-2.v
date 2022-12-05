@@ -10,22 +10,18 @@ fn parse_move(move string) Move {
 	chars := move.split(' ')
 
 	// move 3 from 2 to 5
-	mut mv := Move{chars[1].int(), chars[3].int(), chars[5].int()}
-
-	return mv
+	return Move{chars[1].int(), chars[3].int(), chars[5].int()}
 }
 
 fn parse_stacks(data string) map[int][]string {
 	mut m := map[int][]string{}
 
-	mut rows := data.split_into_lines()
-
+	rows := data.split_into_lines()
 	columns := rows.pop().trim_space().split('   ')
 
 	// use last row to work out how many columns
 	for _, column in columns {
-		col_int := column.int()
-		m[col_int] = []string{}
+		m[column.int()] = []string{}
 	}
 
 	// reverse to make the code read better
@@ -54,10 +50,13 @@ for _, raw_move in moves {
 	move := parse_move(raw_move)
 	mut i := 0
 
+	mut temp_crates := []string{}
 	for i < move.amount_crates {
 		i++
-		stack[move.to_stack] << stack[move.from_stack].pop()
+		temp_crates << stack[move.from_stack].pop()
 	}
+
+	stack[move.to_stack] << temp_crates.reverse()
 }
 
 for _, key in stack.keys() {
