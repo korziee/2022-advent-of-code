@@ -4,6 +4,8 @@
 - haskell
 - go
 - F#
+- swift
+- c
 
 - ts
 - v
