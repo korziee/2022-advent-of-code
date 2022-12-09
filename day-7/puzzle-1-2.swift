@@ -52,9 +52,9 @@ for line in input.split(separator: "\n") {
 let sortedValues = directorySizes.values.sorted()
 let sortedKeys = directorySizes.keys.sorted();
 let amountToFree = (30000000 - (70000000 - sortedValues.last!))
-var sum = 0;
-var name = ""
-var cont = sortedValues.last!;
+var sum: Int = 0;
+var dirToRemoveKey = ""
+var dirToRemoveSize = sortedValues.last!;
 
 for key in sortedKeys {
   let size = directorySizes[key]!
@@ -64,10 +64,11 @@ for key in sortedKeys {
   }
   
   // find smallest value closest to target (amountToFree)
-  if ((size >= amountToFree) && (size - amountToFree) <= (cont - amountToFree)) {
-    name = key
-    cont = size
+  if ((size >= amountToFree) && (size - amountToFree) <= (dirToRemoveSize - amountToFree)) {
+    dirToRemoveKey = key
+    dirToRemoveSize = size
   }
 }
 
-print(name, cont)
+print("puzzle 1", sum)
+print("puzzle 2", dirToRemoveKey, dirToRemoveSize)
