@@ -2,3 +2,5 @@ learnings.md
 tutorials/**
 **/*.beam
 **/node_modules
+**/**/.github
+**/**/build
