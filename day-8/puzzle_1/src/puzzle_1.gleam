@@ -139,7 +139,7 @@ pub fn convert_input_to_grid(input: String) -> Grid {
 pub fn main() {
   assert Ok(file) =
     file.read(
-      from: "/Users/koryporter/dev/personal/2022-advent-of-code/day-8/day_8/src/input.txt",
+      from: "/Users/koryporter/dev/personal/2022-advent-of-code/day-8/puzzle_1/src/input.txt",
     )
 
   let grid = convert_input_to_grid(file)
