@@ -198,4 +198,4 @@ while (edge) {
 
 console.log("SMALLEST DISTANCE:", steps);
 
-drawPath(finished.at(finished.length - 1));
+// drawPath(finished.at(finished.length - 1));
